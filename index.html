@@ -3,24 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PPAW Week 6 - DOM, Event Handling & Fetch API</title>
+  <title>PPAW Week 6 - Katalog Produk & Form</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <h1>PPAW Week 6</h1>
-    <p>JavaScript DOM, Event Handling, dan Fetch API</p>
-    <nav>
-      <a href="#produk">Daftar Produk</a>
-      <a href="#form">Form Pendaftaran</a>
-    </nav>
-  </header>
+  <main class="container">
 
-  <main>
     <!-- ========== BAGIAN 1: FETCH API ========== -->
-    <section id="produk" class="card">
-      <h2>Daftar Produk (Fetch API)</h2>
-      <p class="subtitle">Data diambil dari <code>https://dummyjson.com/products</code></p>
+    <section id="produk">
+      <div class="catalog-header">
+        <div>
+          <h1>Katalog Produk</h1>
+          <p class="subtitle">Data diambil menggunakan Fetch API dari DummyJSON.</p>
+          <a href="#form" class="link-small">Lihat form pendaftaran &darr;</a>
+        </div>
+
+        <div class="toolbar">
+          <input type="search" id="search-input" placeholder="Cari nama produk...">
+          <select id="category-select">
+            <option value="">Semua Kategori</option>
+          </select>
+          <button type="button" id="reload-btn" class="btn-light">Muat Ulang</button>
+        </div>
+      </div>
+
+      <p id="result-info" class="result-info"></p>
 
       <div id="loading" class="loading hidden">
         <div class="spinner"></div>
@@ -31,6 +38,8 @@
         <p id="error-message"></p>
         <button id="retry-btn" type="button">Coba Lagi</button>
       </div>
+
+      <div id="empty" class="empty hidden">Produk tidak ditemukan.</div>
 
       <div id="product-list" class="product-grid"></div>
     </section>
