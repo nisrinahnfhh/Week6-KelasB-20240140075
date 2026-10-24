@@ -3,19 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PPAW Week 6 - Katalog Produk & Form</title>
+  <title>PPAW Week 6 - Katalog Produk</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <main class="container">
-
-    <!-- ========== BAGIAN 1: FETCH API ========== -->
     <section id="produk">
       <div class="catalog-header">
         <div>
           <h1>Katalog Produk</h1>
           <p class="subtitle">Data diambil menggunakan Fetch API dari DummyJSON.</p>
-          <a href="#form" class="link-small">Lihat form pendaftaran &darr;</a>
+          <a href="caption.html" class="link-small">Buka Caption Generator &rarr;</a>
         </div>
 
         <div class="toolbar">
@@ -43,72 +41,6 @@
 
       <div id="product-list" class="product-grid"></div>
     </section>
-
-    <!-- ========== BAGIAN 2: FORM DOM & EVENT ========== -->
-    <section id="form" class="card">
-      <h2>Form Pendaftaran Workshop</h2>
-      <p class="subtitle">Isi data berikut untuk mendaftar workshop.</p>
-
-      <form id="register-form" novalidate>
-        <div class="form-group">
-          <label for="nama">Nama Lengkap</label>
-          <input type="text" id="nama" name="nama" placeholder="Contoh: Nisrina Hanifah">
-          <small class="error-text" id="nama-error"></small>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="nama@email.com">
-          <small class="error-text" id="email-error"></small>
-        </div>
-
-        <div class="form-group">
-          <label for="telepon">No. HP</label>
-          <input type="tel" id="telepon" name="telepon" placeholder="081234567890">
-          <small class="error-text" id="telepon-error"></small>
-        </div>
-
-        <div class="form-group">
-          <label for="workshop">Pilihan Workshop</label>
-          <select id="workshop" name="workshop">
-            <option value="">-- Pilih workshop --</option>
-            <option value="Web Development">Web Development</option>
-            <option value="UI/UX Design">UI/UX Design</option>
-            <option value="Jaringan Komputer">Jaringan Komputer</option>
-            <option value="Machine Learning">Machine Learning</option>
-          </select>
-          <small class="error-text" id="workshop-error"></small>
-        </div>
-
-        <div class="form-group">
-          <label for="pesan">Alasan Mengikuti</label>
-          <textarea id="pesan" name="pesan" rows="4" maxlength="150"
-            placeholder="Tuliskan alasan kamu (min. 10 karakter)"></textarea>
-          <small class="counter"><span id="char-count">0</span>/150 karakter</small>
-          <small class="error-text" id="pesan-error"></small>
-        </div>
-
-        <div class="form-group checkbox-group">
-          <label class="checkbox-label">
-            <input type="checkbox" id="setuju" name="setuju">
-            Saya menyatakan data di atas benar
-          </label>
-          <small class="error-text" id="setuju-error"></small>
-        </div>
-
-        <div class="button-row">
-          <button type="submit" id="submit-btn">Daftar</button>
-          <button type="button" id="reset-btn" class="secondary">Reset</button>
-        </div>
-      </form>
-
-      <div id="form-feedback" class="feedback hidden"></div>
-
-      <div id="result" class="result hidden">
-        <h3>Data Pendaftaran</h3>
-        <dl id="result-list"></dl>
-      </div>
-    </section>
   </main>
 
   <footer>
@@ -116,6 +48,5 @@
   </footer>
 
   <script src="js/products.js"></script>
-  <script src="js/form.js"></script>
 </body>
 </html>

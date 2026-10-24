@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caption Generator - PPAW Week 6</title>
+  <link rel="stylesheet" href="css/caption.css">
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <a href="index.html" class="back-link">&larr; Kembali ke Katalog</a>
+      <h1>Caption Generator</h1>
+      <p class="subtitle">Buat caption media sosial dan promosi produk dengan DOM &amp; Event Handling.</p>
+    </header>
+
+    <div class="layout">
+      <!-- ========== KIRI: FORM ========== -->
+      <section class="card">
+        <h2>Detail Konten</h2>
+
+        <form id="caption-form" novalidate>
+          <div class="form-group">
+            <label for="nama">Nama Produk / Topik <span class="req">*</span></label>
+            <input type="text" id="nama" maxlength="80" placeholder="Contoh: Kopi Susu Gula Aren">
+            <small class="counter"><span id="nama-count">0</span> / 80</small>
+            <small class="error-text" id="nama-error"></small>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label for="platform">Platform <span class="req">*</span></label>
+              <select id="platform">
+                <option value="Instagram">Instagram</option>
+                <option value="TikTok">TikTok</option>
+                <option value="Facebook">Facebook</option>
+                <option value="X (Twitter)">X (Twitter)</option>
+                <option value="WhatsApp">WhatsApp</option>
+              </select>
+              <small class="error-text" id="platform-error"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="tone">Gaya Bahasa (Tone) <span class="req">*</span></label>
+              <select id="tone">
+                <option value="profesional">Profesional &amp; Informatif</option>
+                <option value="santai">Santai &amp; Ramah</option>
+                <option value="persuasif">Persuasif &amp; Menjual</option>
+                <option value="lucu">Lucu &amp; Menghibur</option>
+              </select>
+              <small class="error-text" id="tone-error"></small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="fitur">Keunggulan Utama / Deskripsi Singkat <span class="req">*</span></label>
+            <textarea id="fitur" rows="4" maxlength="250" placeholder="Tuliskan keunggulan produk (min. 10 karakter)"></textarea>
+            <small class="counter"><span id="fitur-count">0</span> / 250</small>
+            <small class="error-text" id="fitur-error"></small>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label for="promo">Info Promo / Diskon (Opsional)</label>
+              <input type="text" id="promo" maxlength="60" placeholder="Contoh: Diskon 20%">
+            </div>
+
+            <div class="form-group">
+              <label for="cta">Call to Action (CTA)</label>
+              <input type="text" id="cta" maxlength="60" placeholder="Contoh: Pesan sekarang">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tags">Kata Kunci Hashtag (pisahkan dengan koma)</label>
+            <input type="text" id="tags" placeholder="contoh: kopi, minumansegar, ngopi">
+            <small class="error-text" id="tags-error"></small>
+          </div>
+
+          <div class="check-row">
+            <label class="check"><input type="checkbox" id="emoji" checked> Sertakan Emoji</label>
+            <label class="check"><input type="checkbox" id="autotag" checked> Sertakan Hashtag Otomatis</label>
+          </div>
+
+          <div class="button-row">
+            <button type="submit" class="btn-dark">Buat Caption</button>
+            <button type="button" id="reset-btn" class="btn-light">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ========== KANAN: HASIL ========== -->
+      <section class="card">
+        <div class="result-head">
+          <h2>Hasil Caption</h2>
+          <span class="badge" id="badge">Belum ada</span>
+        </div>
+
+        <div id="caption-output" class="output placeholder">
+          Isi form di sebelah kiri lalu klik "Buat Caption".
+        </div>
+
+        <div class="stats">
+          <span>Karakter: <b id="stat-chars">0</b></span>
+          <span>Kata: <b id="stat-words">0</b></span>
+          <span>Hashtag: <b id="stat-tags">0</b></span>
+        </div>
+        <p id="stat-warning" class="warning hidden"></p>
+
+        <div class="button-row">
+          <button type="button" id="copy-btn" class="btn-dark" disabled>Salin Caption</button>
+          <button type="button" id="variant-btn" class="btn-light" disabled>Variasi Lain</button>
+        </div>
+
+        <div class="history">
+          <div class="history-head">
+            <h3>Riwayat Caption Sesi Ini</h3>
+            <button type="button" id="clear-history" class="link-btn">Hapus Semua</button>
+          </div>
+          <div id="history-list">
+            <p class="history-empty">Belum ada riwayat.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Nisrina Hanifah Ramadhani &bull; 20240140075 &bull; UMY</p>
+  </footer>
+
+  <script src="js/caption.js"></script>
+</body>
+</html>
